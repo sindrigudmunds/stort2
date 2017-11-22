@@ -1,0 +1,81 @@
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// mixin sem reiknar nákvæmar prósentur útfrá dálkum
+@mixin columns($col: 1) {
+  // margföldum með "1%" til að breyta gildi í prósentu gildi
+  width: ($col / 12 * 100) * 1%;
+}
+
+.col {
+  &-12 {
+    @include columns(12);
+  }
+
+  &-8 {
+    @include columns(8);
+  }
+
+  &-6 {
+    @include columns(6);
+  }
+
+  &-4 {
+    @include columns(4);
+  }
+
+  &-3 {
+    @include columns(3);
+  }
+
+  &-sm {
+    @media (max-width: 1199px) {
+      &-12 {
+        @include columns(12);
+      }
+
+      &-6 {
+        @include columns(6);
+      }
+
+      &-3 {
+        @include columns(3);
+      }
+    }
+  }
+
+  &-xsm {
+    @media (max-width: 599px) {
+      &-12 {
+        @include columns(12);
+      }
+
+      &-6 {
+        @include columns(6);
+      }
+
+      &-3 {
+        @include columns(3);
+      }
+    }
+  }
+}
+
+.offset {
+  &-2 {
+    margin-left: (2 / 12 * 100) * 1%; // reiknað einsog að ofan
+  }
+
+  &-sm {
+    @media (max-width: 599px) {
+      &-0 {
+        margin-left: 0;
+      }
+    }
+  }
+}

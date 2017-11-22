@@ -1,0 +1,40 @@
+$max-width: 1000px;
+$gutter: 20px;
+//$white: rgb(255, 255, 255);
+//$a-tags: 'a, a:active, a:hover, a:visited';
+
+*, *:before, *:after { /* stylelint-disable-line */
+  box-sizing: border-box;
+
+  /* fjarlægjum margin og padding */
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  margin-right: $gutter;
+  margin-left: $gutter;
+  overflow-x: hidden;
+
+  font-size: 16px;
+  line-height: 1.5;
+
+  @media (min-width: $max-width) {
+    margin: 0;
+  }
+}
+
+img { /* stylelint-disable-line */
+  max-width: 100%;
+}
+
+main { /* stylelint-disable-line */
+  max-width: $max-width;
+  margin: 0 auto;
+
+  // þar sem við erum að eiga við neikvæð margin á grid, setjum overflow-x
+  // hér sem hidden, þá fáum við ekki lárétta skrunstiku
+  overflow-x: hidden;
+}
+
+@import "scss/grid";
