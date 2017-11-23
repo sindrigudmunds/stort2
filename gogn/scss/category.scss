@@ -1,0 +1,16 @@
+.category {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
+  color: #eee;
+  align-items: center;
+
+  &__heading {
+    width: 100%;
+    margin: $gutter;
+    font-weight: bold;
+    flex-wrap: nowrap;
+  }
+}

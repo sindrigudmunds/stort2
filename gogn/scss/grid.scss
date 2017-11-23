@@ -1,0 +1,50 @@
+.row {
+  display: flex;
+  max-width: $max-width;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+// mixin sem reiknar nákvæmar prósentur útfrá dálkum
+@mixin columns($col: 1) {
+  // margföldum með "1%" til að breyta gildi í prósentu gildi
+  width: ($col / 12 * 100) * 1%;
+}
+
+.col {
+  &-12 {
+    @include columns(12);
+  }
+
+  &-6 {
+    @include columns(6);
+  }
+
+  &-sm {
+    @media (max-width: 999px) {
+      &-12 {
+        @include columns(12);
+      }
+
+      &-6 {
+        @include columns(6);
+      }
+    }
+  }
+}
+
+/*
+.offset {
+  &-2 {
+    margin-left: (2 / 12 * 100) * 1%; // reiknað einsog að ofan
+  }
+
+  &-sm {
+    @media (max-width: 499px) {
+      &-0 {
+        margin-left: 0;
+      }
+    }
+  }
+}
+*/
