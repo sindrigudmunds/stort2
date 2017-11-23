@@ -1,6 +1,5 @@
 .row {
   display: flex;
-  flex-wrap: wrap;
   max-width: $max-width;
   margin-right: auto;
   margin-left: auto;
@@ -17,65 +16,35 @@
     @include columns(12);
   }
 
-  &-8 {
-    @include columns(8);
-  }
-
   &-6 {
     @include columns(6);
   }
 
-  &-4 {
-    @include columns(4);
-  }
-
-  &-3 {
-    @include columns(3);
-  }
-
   &-sm {
-    @media (max-width: 1199px) {
+    @media (max-width: 999px) {
       &-12 {
         @include columns(12);
       }
 
       &-6 {
         @include columns(6);
-      }
-
-      &-3 {
-        @include columns(3);
-      }
-    }
-  }
-
-  &-xsm {
-    @media (max-width: 599px) {
-      &-12 {
-        @include columns(12);
-      }
-
-      &-6 {
-        @include columns(6);
-      }
-
-      &-3 {
-        @include columns(3);
       }
     }
   }
 }
 
+/*
 .offset {
   &-2 {
     margin-left: (2 / 12 * 100) * 1%; // reiknað einsog að ofan
   }
 
   &-sm {
-    @media (max-width: 599px) {
+    @media (max-width: 499px) {
       &-0 {
         margin-left: 0;
       }
     }
   }
 }
+*/
