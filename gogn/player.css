@@ -20,18 +20,33 @@ body {
 }
 
 .video {
- width: 90%;
- height: 300px; /*hafa auto í lausn*/
- background-color: yellow;
- margin: 20px;
+  display: flex;
+  width: 90%;
+  height: 300px; /*hafa auto í lausn*/
+  background-color: blue;
+  margin: 20px;
+}
+
+.video img {
+  width: 50px;
+  height: 50px;
+}
+
+.nest_play {
+  margin: auto;
+  border: none;
+  background: none;
+  height: 50px;
+  width: 50px;
+  overflow:
 }
 
 .toolbox {
-  width: 90%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 20px;
+  margin-left: -5px;
 }
 
 .toolbox :nth-child(1) {
@@ -39,10 +54,16 @@ body {
 }
 
 .toolbox :nth-child(n) {
-  width: 30px;
-  height: 30px;
-  background-color: black;
+  width: 40px;
+  height: 40px;
   margin-left: 10px;
+  border: none;
+  background: none;
+}
+
+.toolbox :nth-child(n) :nth-child(n) {
+  margin-left: -6px;
+  margin-top: -1px;
 }
 
 a {
