@@ -7,24 +7,16 @@
   </head>
 
   <body>
-    <video src="videos/small.mp4"></video>
-    <div class="toolbox">
-      <button>Play</button>
-      <script>
-        var video = document.querySelector('video');
-        var button = document.querySelector('button');
-        button.addEventListener('click', function () {
-          if (video.paused) {
-            video.play();
-            button.removeChild(button.firstChild);
-            button.appendChild(document.createTextNode('Pause'));
-          } else {
-            video.pause();
-            button.removeChild(button.firstChild);
-            button.appendChild(document.createTextNode('Play'));
-          }
-        });
-      </script>
+    <div class="videoplayer">
+      <div class="video"></div>
+      <div class="toolbox">
+        <div class="back"></div>
+        <div class="play"></div>
+        <div class="mute"></div>
+        <div class="fullscreen"></div>
+        <div class="forward"></div>
+      </div>
     </div>
+    <a href="###">Til baka</a>
   </body>
 </html>
