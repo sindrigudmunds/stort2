@@ -2,6 +2,7 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOMContentLoaded');
+  createCategory("Myndbandaleigan");
   pullData();
 });
 
@@ -26,6 +27,12 @@ function createVideoElement(id, title, created, duration, poster, video) {
 
   var min = Math.floor(duration/60);
   var sek = duration - min*60;
+  if (min < 10) {
+    min = "0"+min;
+  }
+  if (sek < 10) {
+    sek = "0"+sek;
+  }
   var ftime = document.createTextNode(min +":"+sek);
 
   var card__content = document.createElement("div");
@@ -39,7 +46,49 @@ function createVideoElement(id, title, created, duration, poster, video) {
 
   var card__text = document.createElement("div");
   card__text.classList.add("card__text");
-  card__text.appendChild(document.createTextNode("Fyrir " + created + " síðan."));
+  card__text.appendChild(document.createTextNode("Fyrir " + parseMS(created) + " síðan."));
+
+  function parseMS(created) {
+    var now = new Date().getTime();
+    var since = now - created;
+
+    console.log(since);
+
+    var totalSecs = since / 1000;
+    var years = Math.floor(totalSecs / (60*60*24*365.25));
+    var months = Math.floor(totalSecs / (60*60*24*30));
+    var weeks = Math.floor(totalSecs / (60*60*24*7));
+    var days = Math.floor(totalSecs / (60 * 60 * 24));
+    var hours = Math.floor((totalSecs / (60 * 60)));
+
+    if (hours < 24) {
+      if (hours === 1 || hours === 21) {
+        return hours + " klukkustund";
+      }
+      return hours + " klukkustundum";
+    }else if (days < 7) {
+      if (days === 1) {
+        return days + " degi";
+      }
+      return days + " dögum";
+    }else if (weeks < 4) {
+      if (weeks === 1) {
+        return weeks + " degi";
+      }
+      return weeks + " vikum";
+    }else if (months < 12) {
+      if (months === 1) {
+        return months + " mánuði";
+      }
+      return months + " mánuðum";
+    }else {
+      if (years === 1 || years === 21) {
+        return years + " ári";
+      }
+      return years + " árum"
+    }
+
+  }
 
   time.appendChild(ftime);
   card__img.appendChild(image);
@@ -48,7 +97,7 @@ function createVideoElement(id, title, created, duration, poster, video) {
   card__content.appendChild(card__text);
   card.appendChild(card__img);
   card.appendChild(card__content);
-  document.querySelector(".category").appendChild(card);
+  document.body.lastChild.appendChild(card);
   //<img src="videos/bunny.png">
 }
 
@@ -86,11 +135,15 @@ function pullData() {
           var response = JSON.parse(request.responseText);
           //console.log(response.videos[1]);
           for (var i = 0; i < response.categories.length; i++) {
-            console.log(response.categories[0].videos[1]);
+            //console.log(response.categories[0].videos[1]);
             createCategory(response.categories[i].title);
+            //console.log("i= " + i);
             for (var j = 0; j < response.categories[i].videos.length; j++) {
+              //console.log("i= " + i + " j= " + j);
               for (var k = 0; k < response.videos.length; k++) {
+                //console.log("i= " + i + " j= " + j + " k= " + k + " videos[k].id = " + response.videos[k].id + " cat[i]vid[j] = " + response.categories[i].videos[j]);
                 if (response.categories[i].videos[j] === response.videos[k].id) {
+                  //console.log(response.categories[i].videos[j] === response.videos[k].id);
                   var v = response.videos[k];
                   createVideoElement(v.id, v.title, v.created, v.duration,v.poster,v.video);
                 }
