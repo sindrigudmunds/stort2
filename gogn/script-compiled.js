@@ -156,7 +156,7 @@ function pullData() {
       //document.getElementById("1").innerHTML = "<h1>Partí</h1>";
     }
   };
-  //onsole.log(response);
+  //console.log(response);
   //return response;
 }
 
