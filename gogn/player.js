@@ -13,10 +13,14 @@ goBack.innerHTML = 'Til baka';
 goBack.href = "###";
 container.appendChild(goBack);
 
-var video = document.crateElement('div');
-video.className = 'video';
-// Setja innerHTML sem rétt myndband (vísa beint í videos.json?)
+var videoel = document.crateElement('div');
+videoel.className = 'video';
 videoplayer.appendChild(video);
+
+var video = document.createElement('video');
+videoel.appendChild(video);
+// Setja src sem rétt myndband (vísa beint í videos.json?)
+video.src = "small.mp4";
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
@@ -61,7 +65,7 @@ play.addEventListener('click', function() {
         video.pause();
         play.src = "img/play.svg";
     }
-})
+});
 
 
 // Mute takkinn
@@ -75,5 +79,23 @@ mute.addEventListener('click', function() {
     }
 });
 
+
+// Back takkinn sem færir myndband aftur um 3 sekúndur
+back.addEventListener('click', function() {
+    if (video.currentTime > 3) {
+        video.currentTime -= 3;
+    } else {
+        video.currentTime = 0;
+    }
+});
+
+// Forward takkinn sem færir myndbandið fram um 3 sekúndur
+forward.addEventListener('click', function() {
+    if (video.currentTime < (video.duration - 3)) {
+        video.currentTime += 3;
+    } else {
+        video.currentTime = video.duration;
+    }
+});
 
 // Fullscreen
