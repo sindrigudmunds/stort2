@@ -1,4 +1,4 @@
-// Búa til DOM elementin
+// Búa til DOM elementin í <body>
 var container = document.crateElement('div');
 container.className = 'container';
 document.body.appendChild(container);
@@ -7,11 +7,11 @@ var videoplayer = document.crateElement('div');
 videoplayer.className = 'videoplayer';
 container.appendChild(videoplayer);
 
-/*
 var goBack = document.createElement('a');
-container.appendChild(goBack);
 goBack.innerHTML = 'Til baka';
-*/
+// Ath. laga slóð
+goBack.href = "###";
+container.appendChild(goBack);
 
 var video = document.crateElement('div');
 video.className = 'video';
@@ -50,40 +50,30 @@ toolbox.appendChild(fullscreen);
 toolbox.appendChild(forward);
 
 
-// Play og pause (ATH. skipta um mynd)
+/**  Virkni á takkana  **/
+
+// Play og pause
 play.addEventListener('click', function() {
     if (video.paused) {
         video.play();
         play.src = "img/pause.svg";
     } else {
         video.pause();
+        play.src = "img/play.svg";
     }
 })
 
 
-// ATH. láta mute takkann breyta um mynd (unmute.svg)
-muteFun(video) {
+// Mute takkinn
+mute.addEventListener('click', function() {
     if (video.muted = false) {
         video.muted = true;
+        mute.src = "img/unmute.svg";
     } else {
         video.muted = false;
+        mute.src = "img/mute.svg";
     }
-}
-mute.addEventListener('click', muteFun(video));
-
-
-/*
-var video = document.querySelector('video');
-var button = document.querySelector('button');
-button.addEventListener('click', function () {
-  if (video.paused) {
-    video.play();
-    button.removeChild(button.firstChild);
-    button.appendChild(document.createTextNode('Pause'));
-  } else {
-    video.pause();
-    button.removeChild(button.firstChild);
-    button.appendChild(document.createTextNode('Play'));
-  }
 });
-*/
+
+
+// Fullscreen
