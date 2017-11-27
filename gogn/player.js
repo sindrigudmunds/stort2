@@ -49,6 +49,7 @@ function setVideo(title, vid){
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
+nest_play.id = 'nest_play';
 nest_play.innerHTML = "<img src=\"img/play.svg\"></img>";
 video.appendChild(nest_play);
 
@@ -81,6 +82,15 @@ toolbox.appendChild(forward);
 
 /**  Virkni á takkana  **/
 
+// Overlay á nest_play takkann
+nest_play.style.display = "block";
+
+nest_play.addEventListener('click', function() {
+    nest_play.style.display = "none";
+    video.play();
+});
+
+
 // Play og pause
 play.addEventListener('click', function() {
     if (video.paused) {
@@ -91,6 +101,10 @@ play.addEventListener('click', function() {
         play.innerHTML = "<img src=\"img/play.svg\">";
     }
 });
+
+if (video.currentTime == video.duration) {
+    play.innerHTML = "<img src=\"img/play.svg\">";
+}
 
 
 // Mute takkinn
