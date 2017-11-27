@@ -1,18 +1,27 @@
-St�rt verkefni 2: Myndbandavefur.
+Stórt verkefni 2: Myndbandavefur.
 
-�etta verkefni var unni� af: Anna Karen Kristinsd�ttir (akk14)
-                             Sindri ��r Gu�mundsson (sthg11)
-                             J�nas Bergssteinsson (job33)
-                             H�rn Hei�arsd�ttir (hoh45)
+Þetta verkefni var unnið af: Anna Karen Kristinsdóttir (akk14)
+                             Sindri Þór Guðmundsson (sthg11)
+                             Jonas Bergssteinsson (job33)
+                             Hörn Heiðarsd+ottir (hoh45)
 
-�etta verkefni f�l � s�r a� b�a til l�tinn myndbandavef. 
-Vefur er opna�ur me� �v� a� opna index.html skr�na sem er undir m�ppunni gogn. 
-Einnig m� ganga a� s��unni h�r: notendur.hi.is/akk14/vefforritun/stortv2
+Þetta verkefni fól í sér að búa til lítinn myndbandavef.
+Vefur er opnaður með því að opna index.html skrána sem er undir möppunni gogn.
+Einnig má ganga að síðunni hér: notendur.hi.is/akk14/vefforritun/stortv2
 
 -----------------------------------------------
 
-Uppsettning:
+Uppsetning:
 
-Sta�sett undir m�ppu gogn:
-undir videos eru tv� myndb�nd, small og bunny, sem h�gt er a� spila � vefnum.
-G�gn eru lesin �r videos.json
+Staðsett undir möppu gogn:
+undir videos eru tvö myndbönd, small og bunny, sem hægt er að spila á vefnum.
+Gögn eru lesin úr videos.json
+Css er skrifað með Sass skráin styles.scss er þýdd yfir í styles.css
+Undirmappan scss inniheldur scss skrár styles.scss importar.
+player.css útfærir útlit á spilara og er ekki skrifað með Sass.
+
+Script.js sér um að lesa gögn úr videos.json og útfæra myndbandasíðu í flokkum
+útfrá þeim gögnum. Script sér um að senda notanda á player.html þar sem mynband
+er spilað. Player.html notar querystring til þess að vita hvaða mynband skal
+spila. Player býr til nýtt xhttp request til að það spili öruglega rétt
+myndband. 
