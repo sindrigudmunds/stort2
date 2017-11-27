@@ -9,7 +9,6 @@ container.appendChild(videoplayer);
 
 var goBack = document.createElement('a');
 goBack.innerHTML = 'Til baka';
-// Ath. laga slóð
 goBack.href = "index.html";
 container.appendChild(goBack);
 
@@ -20,7 +19,6 @@ videoplayer.appendChild(videoel);
 
 var video = document.createElement('video');
 videoel.appendChild(video);
-// Setja src sem rétt myndband (vísa beint í videos.json?)
 var videoID = document.location.search;
 function setVideo(vid){
   console.log(vid);
