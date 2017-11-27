@@ -19,7 +19,7 @@ videoplayer.appendChild(videoel);
 var video = document.createElement('video');
 videoel.appendChild(video);
 // Setja src sem rétt myndband (vísa beint í videos.json?)
-video.src = "videos/small.mp4";
+video.src = "videos/bunny.mp4";
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
