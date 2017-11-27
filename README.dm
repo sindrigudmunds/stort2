@@ -9,6 +9,10 @@ Stórt verkefni 2: Myndbandavefur.
 Vefur er opnaður með því að opna index.html skrána sem er undir möppunni gogn.
 Einnig má ganga að síðunni hér: notendur.hi.is/akk14/vefforritun/stortv2
 
+Frekari upplýsingar:
+
+-----------------------------------------------
+Ath að ekki er notast við ES2015
 -----------------------------------------------
 
 Uppsetning:
@@ -24,4 +28,4 @@ Script.js sér um að lesa gögn úr videos.json og útfæra myndbandasíðu í 
 útfrá þeim gögnum. Script sér um að senda notanda á player.html þar sem mynband
 er spilað. Player.html notar querystring til þess að vita hvaða mynband skal
 spila. Player býr til nýtt xhttp request til að það spili öruglega rétt
-myndband. 
+myndband.
