@@ -15,6 +15,7 @@ container.appendChild(goBack);
 
 var videoel = document.createElement('div');
 videoel.className = 'video';
+
 videoplayer.appendChild(videoel);
 
 var video = document.createElement('video');

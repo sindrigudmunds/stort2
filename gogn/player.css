@@ -21,9 +21,9 @@ body {
 
 .video {
   display: flex;
-  width: 90%;
-  height: 300px; /*hafa auto í lausn*/
-  background-color: blue;
+  width: auto;
+  height: auto; /*hafa auto í lausn*/
+  background-color: black;
   margin: 20px;
 }
 
