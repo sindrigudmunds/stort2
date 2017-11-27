@@ -1,20 +1,20 @@
 body {
-  background-color: black;
+  background-color: #000;
 }
 
 .container {
-  max-width: 1000px;
-  margin-left: auto;
-  margin-right: auto;
   display: flex;
+  max-width: 1000px;
+  margin-right: auto;
+  margin-left: auto;
   flex-direction: column;
   align-items: center;
-  background-color: gray;
+  background-color: #888;
 }
 
 .videoplayer {
-  width: 100%;
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
 }
@@ -22,9 +22,9 @@ body {
 .video {
   display: flex;
   width: auto;
-  height: auto; /*hafa auto í lausn*/
-  background-color: black;
+  height: auto;
   margin: 20px;
+  background-color: #000;
 }
 
 .video img {
@@ -38,11 +38,11 @@ body {
 }
 
 .nest_play {
-  margin: auto;
-  border: none;
-  background: none;
-  height: 50px;
   width: 50px;
+  height: 50px;
+  margin: auto;
+  background: none;
+  border: 0;
 }
 
 .toolbox {
@@ -57,18 +57,18 @@ body {
   width: 40px;
   height: 40px;
   margin-left: 10px;
-  border: none;
   background: none;
+  border: 0;
 }
 
 .toolbox :nth-child(n) :nth-child(n) {
-  margin-left: -6px;
   margin-top: -1px;
+  margin-left: -6px;
 }
 
-a {
-  font-family: "Open sans", sans-serif;
+a, h1 {
   margin-bottom: 20px;
+  font-family: "Open sans", sans-serif;
+  color: #fff;
   text-decoration: none;
-  color: white;
 }

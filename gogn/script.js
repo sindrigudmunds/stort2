@@ -1,5 +1,4 @@
 //var JSON_URL = '/videos.json';
-
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOMContentLoaded');
   createSite();

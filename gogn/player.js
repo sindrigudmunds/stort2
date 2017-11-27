@@ -3,6 +3,22 @@ var container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
+var request = new XMLHttpRequest();
+ request.open("GET", "videos.json", true);
+ request.send();
+ request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("XMLHttpRequest");
+        var response = JSON.parse(request.responseText);
+
+        for (var i = 0; i < response.videos.length; i++) {
+          if (videoID === "?id=" + response.videos[i].id) {
+            setVideo(response.videos[i].title, response.videos[i].video);
+          }
+        }
+    }
+  };
+
 var videoplayer = document.createElement('div');
 videoplayer.className = 'videoplayer';
 container.appendChild(videoplayer);
@@ -19,26 +35,17 @@ videoplayer.appendChild(videoel);
 
 var video = document.createElement('video');
 videoel.appendChild(video);
+
 var videoID = document.location.search;
-function setVideo(vid){
-  console.log(vid);
+
+function setVideo(title, vid){
+  var titill = document.createElement('h1');
+  titill.appendChild(document.createTextNode(title));
+  console.log(titill);
+  container.appendChild(titill);
   video.setAttribute("src", vid)
 }
-var request = new XMLHttpRequest();
- request.open("GET", "videos.json", true);
- request.send();
- request.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-      console.log("XMLHttpRequest");
-        var response = JSON.parse(request.responseText);
 
-        for (var i = 0; i < response.videos.length; i++) {
-          if (videoID === "?id=" + response.videos[i].id) {
-            setVideo(response.videos[i].video);
-          }
-        }
-    }
-  };
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
