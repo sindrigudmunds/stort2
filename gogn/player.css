@@ -67,7 +67,7 @@ body {
 }
 
 a {
-  /*setja font */
+  font-family: "Open sans", sans-serif;
   margin-bottom: 20px;
   text-decoration: none;
   color: white;
