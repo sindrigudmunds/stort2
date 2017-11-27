@@ -1,9 +1,17 @@
 // Búa til DOM elementin í <body>
+<<<<<<< HEAD
 var container = document.createElement('div');
 container.className = 'container';
 document.body.appendChild(container);
 
 var videoplayer = document.createElement('div');
+=======
+var container = document.crateElement('div');
+container.className = 'container';
+document.body.appendChild(container);
+
+var videoplayer = document.crateElement('div');
+>>>>>>> jonas
 videoplayer.className = 'videoplayer';
 container.appendChild(videoplayer);
 
