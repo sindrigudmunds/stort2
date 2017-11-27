@@ -15,7 +15,7 @@ function createVideoElement(id, title, created, duration, poster, video) {
   var card = document.createElement("div");
   card.classList.add("card");
   card.addEventListener('click', function() {
-    location.assign("http://localhost:3000/player.html?id=" + id);
+    location.assign("/player.html?id=" + id);
     console.log("click");
   });
   var card__img = document.createElement("div");
