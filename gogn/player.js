@@ -18,13 +18,12 @@ videoplayer.appendChild(videoel);
 
 var video = document.createElement('video');
 videoel.appendChild(video);
-video.innerHTML = "Halló heimur!";
 // Setja src sem rétt myndband (vísa beint í videos.json?)
 video.src = "videos/small.mp4";
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
-//net_play.innerHTML = <img src="img/play.svg">;
+nest_play.innerHTML = "<img src=\"img/play.svg\"></img>";
 video.appendChild(nest_play);
 
 var toolbox = document.createElement('div');
@@ -33,19 +32,19 @@ videoplayer.appendChild(toolbox);
 
 var back = document.createElement('button');
 back.className = 'back';
-//back.innerHTML = <img src="img/back.svg">;
+back.innerHTML = "<img src=\"img/back.svg\">";
 var play = document.createElement('button');
 play.className = 'play';
-//play.innerHTML = <img src="img/play.svg">;
+play.innerHTML = "<img src=\"img/play.svg\">";
 var mute = document.createElement('button');
 mute.className = 'mute';
-//mute.innerHTML = <img src="img/mute.svg">;
+mute.innerHTML = "<img src=\"img/mute.svg\">";
 var fullscreen = document.createElement('button');
 fullscreen.className = 'fullscreen';
-//fullscreen.innerHTML = <img src="img/fullscreen.svg">;
+fullscreen.innerHTML = "<img src=\"img/fullscreen.svg\">";
 var forward = document.createElement('button');
 forward.className = 'forward';
-//forward.innerHTML = <img src="img/next.svg">;
+forward.innerHTML = "<img src=\"img/next.svg\">";
 
 toolbox.appendChild(back);
 toolbox.appendChild(play);
