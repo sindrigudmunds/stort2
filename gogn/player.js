@@ -59,22 +59,22 @@ toolbox.appendChild(forward);
 play.addEventListener('click', function() {
     if (video.paused) {
         video.play();
-        play.src = "img/pause.svg";
+        play.innerHTML = "<img src=\"img/pause.svg\">";
     } else {
         video.pause();
-        play.src = "img/play.svg";
+        play.innerHTML = "<img src=\"img/play.svg\">";
     }
 });
 
 
 // Mute takkinn
 mute.addEventListener('click', function() {
-    if (video.muted = false) {
+    if (video.muted == false) {
         video.muted = true;
-        mute.src = "img/unmute.svg";
+        mute.innerHTML = "<img src=\"img/unmute.svg\">";
     } else {
         video.muted = false;
-        mute.src = "img/mute.svg";
+        mute.innerHTML = "<img src=\"img/mute.svg\">";
     }
 });
 
