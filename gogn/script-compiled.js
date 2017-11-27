@@ -4,19 +4,21 @@
 
 document.addEventListener('DOMContentLoaded', function () {
   console.log('DOMContentLoaded');
-  createCategory("Myndbandaleigan");
-  pullData();
+  createSite();
 });
 
 function createSite() {
-  var data = pullData();
-  console.log(data);
+  pullData();
+  createCategory("Myndbandaleigan");
 }
 
 function createVideoElement(id, title, created, duration, poster, video) {
   var card = document.createElement("div");
   card.classList.add("card");
-
+  card.addEventListener('click', function () {
+    location.assign("http://localhost:3000/player.html?id=" + id);
+    console.log("click");
+  });
   var card__img = document.createElement("div");
   card__img.classList.add("card__img");
 
@@ -53,7 +55,7 @@ function createVideoElement(id, title, created, duration, poster, video) {
     var now = new Date().getTime();
     var since = now - created;
 
-    console.log(since);
+    //console.log(since);
 
     var totalSecs = since / 1000;
     var years = Math.floor(totalSecs / (60 * 60 * 24 * 365.25));
