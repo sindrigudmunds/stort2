@@ -9,6 +9,7 @@ container.appendChild(videoplayer);
 
 var goBack = document.createElement('a');
 goBack.innerHTML = 'Til baka';
+// Ath. laga slóð
 goBack.href = "index.html";
 container.appendChild(goBack);
 
@@ -19,7 +20,26 @@ videoplayer.appendChild(videoel);
 var video = document.createElement('video');
 videoel.appendChild(video);
 // Setja src sem rétt myndband (vísa beint í videos.json?)
-video.src = "videos/bunny.mp4";
+var videoID = document.location.search;
+function setVideo(vid){
+  console.log(vid);
+  video.setAttribute("src", vid)
+}
+var request = new XMLHttpRequest();
+ request.open("GET", "videos.json", true);
+ request.send();
+ request.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      console.log("XMLHttpRequest");
+        var response = JSON.parse(request.responseText);
+
+        for (var i = 0; i < response.videos.length; i++) {
+          if (videoID === "?id=" + response.videos[i].id) {
+            setVideo(response.videos[i].video);
+          }
+        }
+    }
+  };
 
 var nest_play = document.createElement('button');
 nest_play.className = 'nest_play';
@@ -125,4 +145,4 @@ fullscreen.addEventListener('click', function() {
             document.msExitFullscreen();
         }
     }
-})
+});
